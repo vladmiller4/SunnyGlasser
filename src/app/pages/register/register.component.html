@@ -1,0 +1,72 @@
+<div class="headerImage"></div>
+<div class="registerPage">
+  <div class="registerForm">
+    <div class="upper">
+      <h4>Create an account</h4>
+      <a [routerLink]="[ '/login' ]">I already have an account</a>
+    </div>
+    <div class="mainForm">
+      <form (ngSubmit)="register(registerForm.value)" (ngSubmit)="addUser(registerForm.value)" (ngSubmit)="addToLocal()"
+        [formGroup]="registerForm">
+        <div class="formRow">
+          <div class="formRowInput">
+            <input formControlName="firstname" required type="text" class="formInput firstname" placeholder="First Name"
+              name="firstname">
+            <div *ngIf="submitted && f.firstname.errors">
+              <p class="invalid" *ngIf="f.firstname.errors.required">PLEASE ENTER YOUR FIRST NAME</p>
+            </div>
+          </div>
+          <div class="formRowInput">
+            <input formControlName="lastname" required type="text" class="formInput lastname" placeholder="Last Name"
+              name="lastname">
+            <div *ngIf="submitted && f.lastname.errors">
+              <p class="invalid" *ngIf="f.lastname.errors.required">PLEASE
+                ENTER YOUR LAST NAME</p>
+            </div>
+          </div>
+        </div>
+        <div class="formRow">
+          <div class="formRowInput">
+            <input formControlName="email" required type="email" class="formInput email" placeholder="Email"
+              name="email">
+            <div *ngIf="submitted && f.email.errors">
+              <p class="invalid" *ngIf="f.email.errors.required">EMAIL IS REQUIRED</p>
+              <p class="invalid" *ngIf="f.email.errors.pattern">PLEASE ENTER A
+                VALID EMAIL ADDRESS</p>
+            </div>
+          </div>
+          <div class="formRowInput">
+            <input formControlName="emailConfirm" required type="email" class="formInput emailConfirm"
+              placeholder="Confirm Email" name="emailConfirm">
+            <div *ngIf="submitted && f.emailConfirm.errors">
+              <p class="invalid" *ngIf="f.emailConfirm.errors.required">CONFIRM PASSWORD IS REQUIRED</p>
+              <p class="invalid" *ngIf="f.emailConfirm.errors.mustMatch">YOUR EMAIL ADDRESS DOES NOT MATCH</p>
+            </div>
+          </div>
+        </div>
+        <div class="formRow">
+          <div class="formRowInput">
+            <input formControlName="password" required type="password" class="formInput password" placeholder="Password"
+              name="password">
+            <div *ngIf="submitted && f.password.errors">
+              <p class="invalid" *ngIf="f.password.errors.required">Password is required</p>
+              <p class="invalid" *ngIf="f.password.errors.pattern">AT LEAST 6 CHARACTERS, LOWERCASE OR
+                UPPERCASE</p>
+            </div>
+          </div>
+          <div class="formRowInput">
+            <input formControlName="passwordConfirm" required type="password" class="formInput passwordConfirm"
+              placeholder="Confirm Password" name="passwordConfirm">
+            <div *ngIf="submitted && f.passwordConfirm.errors">
+              <p class="invalid" *ngIf="f.passwordConfirm.errors.required">CONFIRM PASSWORD IS REQUIRED</p>
+              <p class="invalid" *ngIf="f.passwordConfirm.errors.mustMatch">YOUR PASSWORD DOES NOT MATCH</p>
+            </div>
+          </div>
+        </div>
+        <label><input type="checkbox" checked> I WOULD LIKE TO JOIN THE SUNNYGLASSER CLUB AND RECEIVE UPDATES ON THE
+          LATEST PRODUCTS AND PROMOTIONS VIA EMAIL OR OTHER CHANNELS.</label>
+        <button type="submit" class="registerButton">REGISTER</button>
+      </form>
+    </div>
+  </div>
+</div>

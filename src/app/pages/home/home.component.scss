@@ -1,0 +1,532 @@
+.mainContainer {
+  max-width: 1690px;
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+}
+
+#carouselExampleControls {
+  width: 100%;
+  height: 80vh;
+}
+
+.carousel-inner {
+  width: 100%;
+}
+
+.carousel-item {
+  width: 100%;
+  height: 80vh;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  background-size: cover;
+}
+
+.carousel-caption {
+  bottom: 26vh;
+}
+
+.carousel-caption h5 {
+  font-size: 45px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px #000;
+}
+
+.carousel-caption a {
+  font-size: 24px;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+}
+
+.carousel-caption a:hover {
+  text-decoration: none;
+  border-bottom: 2px solid #fff;
+}
+
+.bestOffers {
+  height: 60vh;
+  width: 100%;
+  padding-top: 70px;
+}
+
+.bestOffersList a {
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: 8px;
+  margin-left: 20px;
+  margin-right: 12px;
+  text-decoration: none;
+  color: #000;
+}
+
+.bestOffersList {
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.bestOffersItems {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.bestOffersBox {
+  width: 30%;
+  height: 35vh;
+}
+
+.bestOffersBoxTop {
+  width: 100%;
+  max-height: 220px;
+}
+
+.bestOffersBoxTop a img {
+  max-width: 100%;
+  height: auto;
+}
+
+.itemName {
+  text-align: center;
+  font-size: 18px;
+}
+
+.gender {
+  width: 100%;
+  max-height: 800px;
+  display: flex;
+  overflow: hidden;
+}
+
+.forHim,
+.forHer {
+  width: 50%;
+  max-height: 800px;
+  position: relative;
+}
+
+.forHim img,
+.forHer img {
+  max-width: 100%;
+  height: auto;
+  max-height: 800px;
+  opacity: 0;
+}
+
+.forHer {
+  background: url(../../../assets/img/forher.jpg);
+  background-size: 100%;
+  background-position: center;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.forHim {
+  background: url(../../../assets/img/forhim.jpg);
+  background-size: 100%;
+  background-position: center;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.forHer:hover,
+.forHim:hover {
+  background-size: 115%;
+  background-position: center;
+}
+
+.genderText {
+  position: absolute;
+  color: #fff;
+  font-size: 40px;
+  font-weight: 300;
+  letter-spacing: 5px;
+  left: 5%;
+  top: 85%;
+  text-shadow: 1px 1px 3px #000;
+  text-decoration: none;
+}
+
+.brands {
+  width: 100%;
+  padding: 70px 50px;
+}
+
+.brandBox a img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.faceShapeGuide a img {
+  width: 100%;
+}
+
+.joinUS {
+  display: flex;
+  height: 70px;
+  justify-content: space-between;
+}
+
+.joinUS label,
+#label1024 {
+  margin-left: 5%;
+  width: 45%;
+  text-align: left;
+  font-size: 21px;
+  line-height: 70px;
+}
+
+.joinUS label:hover {
+  cursor: pointer;
+}
+
+.emailConfirm {
+  width: 45%;
+  margin-right: 5%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.joinUS input {
+  width: 75%;
+  height: 40px;
+  margin-top: 15px;
+  padding-left: 10px;
+  font-size: 20px;
+  border: none;
+  border-bottom: 1px solid #000;
+  outline: none;
+  color: #000;
+}
+
+.joinUS i {
+  margin-left: 10px;
+  margin-top: 20px;
+  font-size: 30px;
+  color: #000;
+}
+
+.salePrice {
+  display: flex;
+  justify-content: center;
+}
+
+.saleCardPrice {
+  margin-top: -10px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-left: 10px;
+}
+
+.saleON {
+  text-decoration: line-through;
+  color: grey;
+  margin-top: -10px;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.saleOFF {
+  margin-top: -10px;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.productHover {
+  transform: scale(1.08);
+  transition: .5s;
+  z-index: 100;
+}
+
+.planeHover:hover {
+  cursor: pointer;
+}
+
+.brandsLess1024 {
+  display: none;
+  width: 100%;
+  padding: 70px 50px;
+}
+
+#label1024 {
+  display: none;
+}
+
+.headerBackgroundLess768 {
+  display: none;
+}
+
+@media only screen and (max-width: 1200px) {
+
+  #carouselExampleControls,
+  .carousel-item {
+    height: 575px;
+  }
+
+  .carousel-caption {
+    bottom: 190px;
+  }
+
+  .carousel-caption h5 {
+    font-size: 40px;
+  }
+
+  .carousel-caption a {
+    font-size: 20px;
+  }
+
+  .bestOffers {
+    height: 420px;
+    margin-bottom: 40px;
+  }
+
+  .bestOffersBox {
+    width: 30%;
+    height: 280px;
+  }
+
+  .genderText {
+    font-size: 36px;
+    letter-spacing: 5px;
+    top: 83%;
+  }
+
+  .joinUS label {
+    font-size: 16px;
+  }
+
+  .joinUS input {
+    height: 35px;
+    font-size: 16px;
+  }
+
+  .joinUS i {
+    font-size: 25px;
+  }
+
+}
+
+@media only screen and (max-width: 1024px) {
+
+  #carouselExampleControls,
+  .carousel-item {
+    height: 575px;
+  }
+
+  .carousel-caption {
+    bottom: 190px;
+  }
+
+  .carousel-caption h5 {
+    font-size: 32px;
+  }
+
+  .carousel-caption a {
+    font-size: 18px;
+  }
+
+  .bestOffers {
+    height: 420px;
+    padding-top: 50px;
+  }
+
+  .bestOffersBox {
+    width: 30%;
+    height: 280px;
+  }
+
+  .genderText {
+    font-size: 30px;
+    letter-spacing: 5px;
+    top: 81%;
+  }
+
+  .brands {
+    display: none;
+  }
+
+  .brandsLess1024 {
+    display: flex;
+  }
+
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .joinUS label {
+    display: none;
+  }
+
+  #label1024 {
+    display: block;
+  }
+
+  .joinUS input {
+    height: 30px;
+  }
+
+}
+
+@media only screen and (max-width: 767px) {
+  .carousel {
+    display: none;
+  }
+
+  .space {
+    height: 12vh;
+  }
+
+  .headerBackgroundLess768 {
+    display: block;
+    background-image: url(../../../assets/img/GG-768.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 500px;
+  }
+
+  .bestOffers {
+    height: auto;
+  }
+
+  .bestOffersList {
+    border-bottom: 1px solid #000;
+  }
+
+  .bestOffersList a {
+    font-size: 32px;
+    letter-spacing: 4px;
+    margin-bottom: 45px;
+  }
+
+  .bestOffersItems {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bestOffersBox {
+    margin-left: 20%;
+    width: 60%;
+    height: 260px;
+    margin-bottom: 50px;
+  }
+
+  .itemName {
+    font-size: 20px;
+    letter-spacing: 4px;
+  }
+
+  .salePrice p {
+    font-size: 18px;
+  }
+
+  .bestOffersBoxTop {
+    min-height: 200px;
+  }
+
+  .gender {
+    flex-direction: column;
+    max-height: 1300px;
+  }
+
+  .forHer,
+  .forHim {
+    width: 100%;
+  }
+
+  .genderText {
+    font-size: 40px;
+  }
+
+  .brandsLess1024 {
+    display: none;
+  }
+
+  .faceShapeGuide {
+    display: none;
+  }
+
+  .joinUS {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .joinUS label {
+    display: block;
+    width: 90%;
+    margin-left: 5%;
+    text-align: center;
+    line-height: 35px;
+    margin-top: 20px;
+    font-size: 20px;
+  }
+
+  #label1024 {
+    display: none;
+  }
+
+  .emailConfirm {
+    width: 80%;
+    margin-right: 0px;
+    margin-left: 5%;
+    margin-bottom: 20px;
+    margin-top: -15px;
+  }
+
+}
+
+@media only screen and (max-width: 480px) {
+
+  .bestOffersBox {
+    margin-left: 10%;
+    width: 80%;
+    height: 260px;
+    margin-bottom: 30px;
+  }
+
+  .bestOffersBoxTop {
+    min-height: 150px;
+  }
+
+  .bestOffersItems {
+    padding-top: 20px;
+  }
+
+  .genderText {
+    font-size: 30px;
+  }
+
+  .joinUS label {
+    font-size: 16px;
+  }
+
+  .joinUS input {
+    margin-top: 10px;
+  }
+
+  .joinUS i {
+    margin-top: 18px;
+    font-size: 22px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .bestOffers {
+    margin-bottom: 0px;
+  }
+
+}
+
+@media only screen and (max-width: 320px) {
+
+  .headerBackgroundLess768 {
+    height: 420px;
+  }
+}

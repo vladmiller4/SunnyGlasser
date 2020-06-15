@@ -1,0 +1,67 @@
+<div class="adminProductsList">
+  <table class="table table-bordered table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Category</th>
+        <th scope="col">Brand</th>
+        <th scope="col">Model</th>
+        <th scope="col">Price</th>
+        <th scope="col">Color</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products; let i=index">
+        <td>{{product.id}}</td>
+        <td>{{product.category.name}}</td>
+        <td>{{product.brand}}</td>
+        <td>{{product.model}}</td>
+        <td>{{product.price | currency}}</td>
+        <td>{{product.color}}</td>
+        <td><button class="btn btn-warning" (click)="editProduct(product)" (click)="openModal(editModal)">Edit</button>
+        </td>
+        <td><button class="btn btn-danger" (click)="deleteProduct(product)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #editModal>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left">Edit product</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <select [(ngModel)]="categoryName" name="categoryName" class="custom-select" (change)="setCategory()">
+        <option selected>Choose category</option>
+        <option *ngFor="let category of categories; let i=index">{{category.name | titlecase}}</option>
+      </select>
+      <select [(ngModel)]="brand" name="brand" class="custom-select">
+        <option selected>Choose brand</option>
+        <option *ngFor="let brand of brands; let i=index">{{brand}}</option>
+      </select>
+      <input [(ngModel)]="model" name="model" type="text" class="form-control" placeholder="Model name">
+      <input [(ngModel)]="price" name="price" type="number" class="form-control" placeholder="Price">
+      <select [(ngModel)]="shape" name="shape" class="custom-select">
+        <option selected>Choose shape</option>
+        <option *ngFor="let shape of shapes; let i=index">{{shape}}</option>
+      </select>
+      <select [(ngModel)]="color" name="color" class="custom-select">
+        <option selected>Choose color</option>
+        <option *ngFor="let color of colors; let i=index">{{color}}</option>
+      </select>
+      <select [(ngModel)]="material" name="material" class="custom-select">
+        <option selected>Choose material</option>
+        <option *ngFor="let material of materials; let i=index">{{material}}</option>
+      </select>
+      <select [(ngModel)]="lens" name="lens" class="custom-select">
+        <option selected>Choose lens</option>
+        <option *ngFor="let lens of lenses; let i=index">{{lens}}</option>
+      </select>
+      <button class="btn btn-success" (click)="saveProduct()">Save product</button>
+    </div>
+  </ng-template>
+</div>

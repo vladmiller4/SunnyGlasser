@@ -1,0 +1,19 @@
+<div class="headerImage"></div>
+<div class="loginPage">
+  <div class="loginForm">
+    <form (ngSubmit)="login(loginForm.value)" (ngSubmit)="addToLocal(loginForm.value)" [formGroup]="loginForm">
+      <h4>Sign In</h4>
+      <input required type="email" class="formInput" placeholder="Email address" name="email" formControlName="email">
+      <input required type="password" class="formInput" placeholder="Password" name="password"
+        formControlName="password">
+      <p class="invalid"
+        *ngIf="loginForm.controls['email'].invalid  && loginForm.controls['email'].touched || loginErrorStatus === true">
+        Please enter a valid email address and password combination.</p>
+      <button type="submit" [disabled]="!loginForm.valid" class="signInButton">SIGN IN</button>
+    </form>
+    <h4>New user</h4>
+    <a [routerLink]="[ '/register' ]">
+      <button class="createButton">CREATE AN ACCOUNT</button>
+    </a>
+  </div>
+</div>

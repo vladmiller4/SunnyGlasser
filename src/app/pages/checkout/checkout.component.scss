@@ -1,0 +1,260 @@
+.headerImage {
+  width: 100%;
+  height: 12vh;
+  background-color: #000;
+}
+.checkoutMain {
+  min-height: 78vh;
+  width: 100%;
+}
+.checkout {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.userInfo {
+  width: 58%;
+  padding: 30px;
+  background-color: #f6f6f6;
+}
+
+.orderSummary {
+  width: 38%;
+  padding: 30px;
+  background-color: #f6f6f6;
+}
+
+.orderSummary h3 {
+  font-weight: 300;
+  text-align: center;
+}
+
+.productInfo {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid #000;
+}
+
+.productCartImg {
+  width: 50%;
+}
+
+.productCartImg img {
+  max-width: 100%;
+}
+
+.productCartDescription {
+  width: 50%;
+}
+
+.productCartDescription p {
+  font-size: 16px;
+}
+
+.productCartDescription p:first-child {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.productCartDescription span {
+  color: grey;
+}
+
+.totals {
+  margin-top: 40px;
+}
+
+.totals p {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  color: grey;
+}
+
+#totalCheckOut {
+  font-size: 20px;
+  font-weight: 500;
+  color: black;
+}
+
+.userInfo form button {
+  width: 20%;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid black;
+  margin-top: 10px;
+  padding: 10px;
+  outline: none;
+  text-decoration: none;
+  text-align: center;
+}
+
+.userInfo form input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.userInfo form select {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+
+.invalid {
+  font-size: 12px;
+  color: #ff1010;
+}
+
+.firstname.ng-touched.ng-invalid {
+  border: 1px solid #ff1010;
+}
+
+.firstname.ng-touched.ng-valid {
+  border: 1px solid #10b351;
+}
+
+.lastname.ng-touched.ng-invalid {
+  border: 1px solid #ff1010;
+}
+
+.lastname.ng-touched.ng-valid {
+  border: 1px solid #10b351;
+}
+
+.addressline.ng-touched.ng-invalid {
+  border: 1px solid #ff1010;
+}
+
+.addressline.ng-touched.ng-valid {
+  border: 1px solid #10b351;
+}
+
+.addressline2.ng-touched.ng-valid {
+  border: 1px solid #10b351;
+}
+
+.city.ng-touched.ng-invalid {
+  border: 1px solid #ff1010;
+}
+
+.city.ng-touched.ng-valid {
+  border: 1px solid #10b351;
+}
+
+.zipcode.ng-touched.ng-invalid {
+  border: 1px solid #ff1010;
+}
+
+.zipcode.ng-touched.ng-valid {
+  border: 1px solid #10b351;
+}
+
+.phone.ng-touched.ng-invalid {
+  border: 1px solid #ff1010;
+}
+
+.phone.ng-touched.ng-valid {
+  border: 1px solid #10b351;
+}
+
+.email.ng-touched.ng-invalid {
+  border: 1px solid #ff1010;
+}
+
+.email.ng-touched.ng-valid {
+  border: 1px solid #10b351;
+}
+
+.region.ng-touched.ng-valid {
+  border: 1px solid #10b351;
+}
+
+.formRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.formRowInput {
+  width: 48%;
+}
+
+.formInput {
+  height: 40px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+}
+
+@media only screen and (max-width: 1023px) {
+  .userInfo form button {
+    width: 35%;
+  }
+
+  .orderSummary h3 {
+    font-size: 23px;
+    margin-bottom: -15px;
+  }
+
+  .productInfo {
+    display: block;
+    padding-bottom: 15px;
+  }
+  .productCartImg {
+    width: 100%;
+    margin-top: -20px;
+  }
+
+  .productCartDescription {
+    width: 100%;
+    text-align: center;
+  }
+
+  .productCartDescription p:first-child {
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+
+  .productCartDescription p {
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+
+  .totals p {
+    font-size: 15px;
+  }
+
+  #totalCheckOut {
+    font-size: 16px;
+  }
+
+}
+
+@media only screen and (max-width: 767px) {
+  .checkout {
+    flex-direction: column-reverse;
+  }
+  .userInfo, .orderSummary {
+    width: 100%;
+  }
+  .productCartDescription p {
+    font-size: 18px;
+  }
+  .productCartDescription p:first-child {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .checkout {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .userInfo form button {
+    width: 100%;
+  }
+}

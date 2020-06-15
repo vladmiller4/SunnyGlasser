@@ -1,0 +1,29 @@
+<section>
+  <div class="headerImage"></div>
+  <div class="adminMain">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link navLink" [routerLink]="[ 'admin-products-add' ]" routerLinkActive="active">Products Add</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link navLink" [routerLink]="[ 'admin-products-list' ]" routerLinkActive="active">Products List</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link navLink" [routerLink]="[ 'admin-categories' ]" routerLinkActive="active">Categories</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link navLink" [routerLink]="[ 'admin-sales' ]" routerLinkActive="active">Sales</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link navLink" [routerLink]="[ 'admin-orders' ]" routerLinkActive="active">Orders</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link navLink" [routerLink]="[ 'admin-subscribers' ]" routerLinkActive="active">Subscribers</a>
+      </li>
+    </ul>
+    <a class="signOut" [routerLink]="[ '/login']" (click)="signOut()">SIGN OUT</a>
+  </div>
+</section>
+<div>
+  <router-outlet></router-outlet>
+</div>

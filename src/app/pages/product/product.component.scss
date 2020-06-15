@@ -1,0 +1,498 @@
+.headerImage {
+  width: 100%;
+  height: 12vh;
+  background-color: #000;
+}
+
+.breadcrumbTrails {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.breadcrumbTrails:hover {
+  cursor: pointer;
+  color: #606469;
+}
+
+.breadcrumbTrails p {
+  font-size: 22px;
+  margin-left: 10px;
+  margin-bottom: -1px;
+}
+
+.carousel {
+  margin-top: 50px;
+}
+
+.productMain {
+  height: 70vh;
+  display: flex;
+  background-color: #f6f6f6;
+  border-bottom: 1px solid #000;
+  border-top: 1px solid #000;
+}
+
+.productImages {
+  width: 60%;
+  height: 70vh;
+  padding: 50px;
+  padding-top: 20px;
+}
+
+.productInfo {
+  width: 40%;
+  height: 70vh;
+  padding: 50px;
+  border-left: 1px solid #000;
+}
+
+.mainImg {
+  width: 100%;
+}
+
+.productImages img {
+  max-width: 100%;
+}
+
+.carousel-indicators {
+  margin-bottom: -10px;
+}
+
+.carousel-indicators li {
+  background-color: #000;
+}
+
+.productTitle {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Roboto', sans-serif;
+}
+
+.productTitle h5 {
+  font-size: 30px;
+}
+
+.productInfo {
+  font-family: 'Roboto', sans-serif;
+}
+
+.productTitle i {
+  font-size: 25px;
+}
+
+.productInfo p {
+  font-size: 20px;
+}
+
+.productInfo h6 {
+  font-size: 22px;
+}
+
+.productInfo span {
+  color: grey;
+}
+
+.productInfo button,
+.aboutProductBrand button {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+  height: 40px;
+  width: 200px;
+  outline: none;
+  margin-top: 20px;
+}
+
+.aboutProductBrand {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.aboutProductBrand h4 {
+  text-align: center;
+}
+
+.aboutProductBrand p {
+  text-align: justify;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.aboutProductBrand button {
+  width: 20%;
+  margin-left: 40%;
+}
+
+.aboutProductBrand a {
+  color: #000;
+  text-decoration: none;
+}
+
+.alsoLike {
+  border-top: 1px solid #000;
+  padding-top: 50px;
+  margin-bottom: 50px;
+}
+
+.alsoLike h5 {
+  font-size: 22px;
+  padding-left: 30px;
+  margin-bottom: 50px;
+  font-weight: 400;
+}
+
+.alsoLikeSunglass {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.alsoLikeCard {
+  width: 23%;
+  height: 35vh;
+  background-color: #f6f6f6;
+  border: 1px solid black;
+}
+
+.alsoLikeImg {
+  width: 100%;
+  height: 65%;
+}
+
+.alsoLikeImg a img {
+  margin-top: 20px;
+  max-width: 100%;
+  height: auto;
+}
+
+.alsoLikeDescription {
+  height: 35%;
+  justify-content: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 18px;
+  margin-top: -10px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.alsoLikeDescription p {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: -5px;
+}
+
+.salePrice {
+  display: flex;
+  justify-content: center;
+}
+
+.saleCardPrice {
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-left: 10px;
+}
+
+.saleON {
+  text-decoration: line-through;
+  color: grey;
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-left: 10px;
+}
+
+.saleOFF {
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.jcStart {
+  justify-content: start;
+}
+
+.productHover {
+  transform: scale(1.08);
+  transition: .5s all;
+  z-index: 100;
+}
+
+.alsoLikeCardLess1024 {
+  display: none;
+  width: 30%;
+  height: 260px;
+  background-color: #f6f6f6;
+  border: 1px solid black;
+}
+
+.heartLess768 {
+  display: none;
+}
+
+.saleCardPriceLess768 {
+  display: none;
+}
+
+.button768 {
+  display: none;
+}
+
+.shopButton768 {
+  display: none;
+}
+
+.productTitle i:hover {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1200px) {
+
+  .productMain,
+  .productImages,
+  .productInfo {
+    height: 495px;
+  }
+
+  .productTitle h5 {
+    margin-bottom: 15px;
+  }
+
+  .productInfo p {
+    font-size: 18px;
+  }
+
+  .productInfo h6 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .productTitle i {
+    margin-top: 5px;
+  }
+
+  .productInfo button {
+    margin-top: 15px;
+  }
+
+  .aboutProductBrand p {
+    font-size: 16px;
+  }
+
+  .aboutProductBrand button {
+    width: 30%;
+    margin-left: 35%;
+  }
+
+  .alsoLikeDescription {
+    margin-top: -25px;
+  }
+
+  .alsoLikeCard {
+    height: 260px;
+  }
+
+  .alsoLikeDescription p {
+    font-size: 18px;
+  }
+
+  .carousel {
+    margin-top: 45px;
+  }
+
+  .carousel-indicators {
+    margin-bottom: -25px;
+  }
+
+  .productImages i:hover {
+    cursor: pointer;
+  }
+
+  .productTitle i {
+    cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+
+  .productMain,
+  .productInfo {
+    height: 440px;
+  }
+
+  .productImages {
+    height: auto;
+  }
+
+  .carousel {
+    margin-top: 75px;
+  }
+
+  .carousel-indicators {
+    margin-bottom: -30px;
+  }
+
+  .productTitle h5 {
+    font-size: 28px;
+  }
+
+  .productInfo p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .productInfo h6 {
+    font-size: 18px;
+    margin-top: 5px;
+  }
+
+  .productInfo button {
+    margin-top: 10px;
+  }
+
+  .alsoLikeDescription p {
+    font-size: 16px;
+  }
+
+  .alsoLikeCard {
+    display: none;
+  }
+
+  .alsoLikeCardLess1024 {
+    display: block;
+  }
+
+  .alsoLikeImg {
+    height: 70%;
+  }
+
+  .saleCardPrice {
+    font-size: 16px;
+  }
+
+}
+
+@media only screen and (max-width: 767px) {
+
+  .productMain {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .productImages {
+    position: relative;
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .productTitle i {
+    display: none;
+  }
+
+  .heartLess768 {
+    display: block;
+    position: absolute;
+    right: 30px;
+    top: 40px;
+    font-size: 28px;
+  }
+
+  .salePrice {
+    display: none;
+  }
+
+  .productInfo {
+    position: relative;
+    width: 100%;
+    padding-bottom: 0;
+    height: 420px;
+  }
+
+  .saleCardPriceLess768 {
+    display: block;
+  }
+
+  .productInfo p {
+    font-size: 18px;
+  }
+
+  .productInfo button {
+    position: absolute;
+    top: 264px;
+    right: 51px;
+  }
+
+  .button768 {
+    display: block;
+  }
+
+  .buttonDefault {
+    display: none;
+  }
+
+  .productInfo button {
+    width: 200px;
+  }
+
+  .shopButtonDefault {
+    display: none;
+  }
+
+  .shopButton768 {
+    display: block;
+  }
+
+  .alsoLike {
+    display: none;
+  }
+
+  .productInfo button {
+    position: static;
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  #cardPrice768 {
+    font-size: 20px;
+  }
+
+  .aboutProductBrand {
+    width: 100%;
+    padding: 50px;
+    padding-top: 20px;
+    padding-bottom: 0;
+  }
+
+  .aboutProductBrand button {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .productImages {
+    padding: 0;
+  }
+
+  .productInfo {
+    margin-top: 20px;
+  }
+
+  .productTitle {
+    flex-direction: column;
+  }
+
+  .productInfo {
+    height: 450px;
+  }
+
+  #cardPrice768 {
+    font-size: 18px;
+  }
+
+}

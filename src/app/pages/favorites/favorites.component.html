@@ -1,0 +1,54 @@
+<section>
+  <div class="headerImage"></div>
+  <div class="favoritesEmpty" *ngIf="!favorites.length">
+    <div class="mainEmpty">
+      <h2>YOUR FAVORITES IS EMPTY</h2>
+      <p>Your favorite items is currently empty. If you see something you would like
+        click <i class="far fa-heart"></i></p>
+      <a [routerLink]="[ '/brands' ]">CONTINUE SHOPPING</a>
+    </div>
+  </div>
+  <div class="favorites" *ngIf="favorites.length">
+    <div class="productMain" *ngFor="let favorite of favorites">
+      <div class="productImages">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="{{favorite?.image1}}" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+              <img src="{{favorite?.image2}}" class="d-block w-100">
+            </div>
+            <div class="carousel-item">
+              <img src="{{favorite?.image3}}" class="d-block w-100">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="productInfo">
+        <div class="productTitle">
+          <h5>{{favorite?.brand}}</h5>
+          <i class="fas fa-times" (click)="deleteFavorite(favorite)"></i>
+        </div>
+        <div class="salePrice jcStart">
+          <p class="saleCardPrice" *ngIf="favorite?.sale" style="margin-left: 0px">
+            {{favorite?.price-favorite?.price/100*favorite?.saleRate | currency}}</p>
+          <p [ngClass]="favorite?.sale ? 'saleON' : 'saleOFF'">{{favorite?.price | currency}}</p>
+        </div>
+        <h6>DETAILS:</h6>
+        <p>Model: <span>{{favorite?.model}}</span></p>
+        <p>Shape: <span>{{favorite?.shape}}</span></p>
+        <p>Color: <span>{{favorite?.color}}</span></p>
+        <p>Frame material: <span>{{favorite?.material}}</span></p>
+        <p>Lens material: <span>{{favorite?.lens}}</span></p>
+        <button class="addToBagLess1024none" (click)="addToBag(favorite)">ADD TO SHOPING BAG</button>
+        <button class="addToBagLess1024" (click)="addToBag(favorite)">ADD TO BAG</button>
+      </div>
+    </div>
+  </div>
+</section>

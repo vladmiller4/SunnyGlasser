@@ -1,0 +1,87 @@
+<div class="headerImage"></div>
+<section>
+  <div class="checkoutMain">
+    <div class="checkout">
+      <div class="userInfo">
+        <form>
+          <div class="formRow">
+            <div class="formRowInput">
+              <input pattern="[A-Za-z]{1,32}" required type="text" class="formInput firstname" placeholder="First Name"
+                [(ngModel)]="user.firstname" name="firstname" #firstname="ngModel">
+              <p class="invalid" [hidden]="firstname.valid || firstname.untouched">PLEASE ENTER YOUR FIRST NAME</p>
+            </div>
+            <div class="formRowInput">
+              <input pattern="[A-Za-z]{1,32}" required type="text" class="formInput lastname" placeholder="Last Name"
+                [(ngModel)]="user.lastname" name="lastname" #lastname="ngModel">
+              <p class="invalid" [hidden]="lastname.valid || lastname.untouched">PLEASE ENTER YOUR LAST NAME</p>
+            </div>
+          </div>
+          <div>
+            <input pattern="^[A-Za-z0-9 _/]{3,}$" required type="text" class="formInput addressline"
+              placeholder="Address Line" [(ngModel)]="user.addressline" name="addressline" #addressline="ngModel">
+            <p class="invalid" [hidden]="addressline.valid || addressline.untouched">PLEASE ENTER ADDRESS INFORMATION
+            </p>
+          </div>
+          <div>
+            <input type="text" class="formInput addressline2" placeholder="Address Line 2 (Optional)"
+              [(ngModel)]="user.addressline2" name="addressline2" #addressline2="ngModel">
+          </div>
+          <div class="formRow">
+            <div class="formRowInput">
+              <input type="text" class="formInput" readonly placeholder="Ukraine">
+            </div>
+            <div class="formRowInput">
+              <input pattern="[A-Za-z]{2,}" required type="text" class="formInput city" placeholder="City"
+                [(ngModel)]="user.city" name="city" #city="ngModel">
+              <p class="invalid" [hidden]="city.valid || city.untouched">PLEASE ENTER A CITY</p>
+            </div>
+          </div>
+          <div class="formRow">
+            <div class="formRowInput">
+              <input pattern="^\d{5}(?:[-\s]\d{4})?$" required type="text" class="formInput zipcode"
+                placeholder="Postal / Zip Code" [(ngModel)]="user.zipcode" name="zipcode" #zipcode="ngModel">
+              <p class="invalid" [hidden]="zipcode.valid || zipcode.untouched">PLEASE INSERT A VALID ZIP CODE</p>
+            </div>
+            <div class="formRowInput">
+              <input [textMask]="{mask: phoneMask}" required type="tel" class="formInput phone" placeholder="Phone"
+                [(ngModel)]="user.phone" name="phone" #phone="ngModel">
+              <p class="invalid" [hidden]="phone.valid || phone.untouched">PLEASE ENTER A VALID PHONE NUMBER</p>
+            </div>
+          </div>
+          <div>
+            <input pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required type="email"
+              class="formInput email" placeholder="Email Address" [(ngModel)]="user.email" name="email"
+              #email="ngModel">
+            <p class="invalid" [hidden]="email.valid || email.untouched">PLEASE ENTER A VALID EMAIL ADDRESS</p>
+          </div>
+          <a [routerLink]="[ '/cart' ]" (click)="addOrder()">
+            <button type="button"
+              [disabled]="firstname.invalid || lastname.invalid || addressline.invalid || city.invalid || zipcode.invalid || phone.invalid || email.invalid">
+              PROCEED
+            </button>
+          </a>
+        </form>
+      </div>
+      <div class="orderSummary">
+        <h3>ORDER SUMMARY</h3>
+        <div class="productInfo" *ngFor="let order of orders">
+          <div class="productCartImg">
+            <a [routerLink]="[ '/product', order.id ]"><img src="{{order.imageList}}"></a>
+          </div>
+          <div class="productCartDescription">
+            <p>{{order.brand}} <span>{{order.model}}</span></p>
+            <p>Quantity: {{order.count}}</p>
+            <p>Price:
+              {{((order.sale == true) ? ((order.price-order.price/100*order.saleRate) * order.count) : (order.price * order.count)) | currency}}
+            </p>
+          </div>
+        </div>
+        <div class="totals">
+          <p>Order Subtotal <span>{{totalPrice | currency}}</span></p>
+          <p>Shipping Standard Ground <span>FREE</span></p>
+          <p id="totalCheckOut">ORDER TOTAL <span>{{totalPrice | currency}}</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,18 @@
+<div class="adminSubscribers">
+  <table class="table table-bordered table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Email</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let subscriber of subscribers; let i=index">
+        <td>{{subscriber.id}}</td>
+        <td>{{subscriber.email}}</td>
+        <td><button class="btn btn-danger" (click)="deleteSubscriber(subscriber)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

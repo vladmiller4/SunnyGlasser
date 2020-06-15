@@ -1,0 +1,35 @@
+<section>
+  <div class="adminSales">
+    <div class="adminProductsList">
+      <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Category</th>
+            <th scope="col">Brand</th>
+            <th scope="col">Model</th>
+            <th scope="col">Price</th>
+            <th scope="col">Color</th>
+            <th scope="col">Sale Rate</th>
+            <th scope="col">Add to Sale</th>
+            <th scope="col">New Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products; let i=index">
+            <td>{{i+1}}</td>
+            <td>{{product.category.name}}</td>
+            <td>{{product.brand}}</td>
+            <td>{{product.model}}</td>
+            <td>{{product.price | currency}}</td>
+            <td>{{product.color}}</td>
+            <td><input [(ngModel)]="product.saleRate" name="product.saleRate" type="number"
+                style="width: 70px; padding-left: 10px; text-align: center;"></td>
+            <td><input type="checkbox" [checked]="product.sale" (click)="saleAdd(product)"></td>
+            <td>{{product.price-product.price/100*product.saleRate | currency}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

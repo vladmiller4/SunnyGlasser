@@ -1,0 +1,152 @@
+<div class="headerImage"></div>
+<img src="../../../assets/img/arr.png" class="goUp" (click)="goTop()">
+<section>
+  <div class="men">
+    <div class="titleOfComponents">
+      <h3>Brands Sunglass</h3>
+      <div class="titleOfComponents2" (click)="filterBrand()">
+        <p>FILTER</p>
+        <i id="navArrow" *ngIf="fBrandStatus" class="fas fa-chevron-down"></i>
+        <i id="navArrow" *ngIf="!fBrandStatus" class="fas fa-chevron-right"></i>
+      </div>
+    </div>
+    <div class="filterMenu" [ngClass]="fBrandStatus ? 'displayBlock' : 'displayNone'">
+      <div class="filterBy">
+        <ul class="filterNav">
+          <li id="liBrands">Brands
+            <div class="dropDownFilterFlex">
+              <ul>
+                <li *ngFor="let brand of brands.slice(0,4)"><label><input type="checkbox"
+                      (click)="brandFilterFunction(brand)">{{brand.brand}}</label></li>
+              </ul>
+              <ul>
+                <li *ngFor="let brand of brands.slice(4,8)"><label><input type="checkbox"
+                      (click)="brandFilterFunction(brand)">{{brand.brand}}</label></li>
+              </ul>
+              <ul>
+                <li *ngFor="let brand of brands.slice(8,12)"><label><input type="checkbox"
+                      (click)="brandFilterFunction(brand)">{{brand.brand}}</label></li>
+              </ul>
+              <ul>
+                <li *ngFor="let brand of brands.slice(12,16)"><label><input type="checkbox"
+                      (click)="brandFilterFunction(brand)">{{brand.brand}}</label></li>
+              </ul>
+            </div>
+          </li>
+          <li id="liBrands768">Brands
+            <div class="dropDownFilterFlex">
+              <ul>
+                <li *ngFor="let brand of brands.slice(0,5)"><label><input type="checkbox"
+                      (click)="brandFilterFunction(brand)">{{brand.brand}}</label></li>
+              </ul>
+              <ul>
+                <li *ngFor="let brand of brands.slice(5,10)"><label><input type="checkbox"
+                      (click)="brandFilterFunction(brand)">{{brand.brand}}</label></li>
+              </ul>
+              <ul>
+                <li *ngFor="let brand of brands.slice(10,15)"><label><input type="checkbox"
+                      (click)="brandFilterFunction(brand)">{{brand.brand}}</label></li>
+              </ul>
+            </div>
+          </li>
+          <li id="liBrands480">Brands
+            <div class="dropDownFilterFlex">
+              <ul>
+                <li *ngFor="let brand of brands.slice(0,8)"><label><input type="checkbox"
+                      (click)="brandFilterFunction(brand)">{{brand.brand}}</label></li>
+              </ul>
+              <ul>
+                <li *ngFor="let brand of brands.slice(8,16)"><label><input type="checkbox"
+                      (click)="brandFilterFunction(brand)">{{brand.brand}}</label></li>
+              </ul>
+            </div>
+          </li>
+          <li>Shape
+            <div class="dropDownFilter" [ngClass]="fBrandStatus ? 'displayBlock' : 'displayNone'">
+              <ul class="shapeDefault">
+                <li *ngFor="let shape of shapes.slice(0,4)"><label><input type="checkbox"
+                      (click)="shapeFilterFunction(shape)">{{shape.shape}}</label></li>
+              </ul>
+              <ul class="shapeDefault">
+                <li *ngFor="let shape of shapes.slice(4,8)"><label><input type="checkbox"
+                      (click)="shapeFilterFunction(shape)">{{shape.shape}}</label></li>
+              </ul>
+
+              <ul class="shape950">
+                <li *ngFor="let shape of shapes.slice(0,2)"><label><input type="checkbox"
+                      (click)="shapeFilterFunction(shape)">{{shape.shape}}</label></li>
+              </ul>
+              <ul class="shape950">
+                <li *ngFor="let shape of shapes.slice(2,4)"><label><input type="checkbox"
+                      (click)="shapeFilterFunction(shape)">{{shape.shape}}</label></li>
+              </ul>
+              <ul class="shape950">
+                <li *ngFor="let shape of shapes.slice(4,6)"><label><input type="checkbox"
+                      (click)="shapeFilterFunction(shape)">{{shape.shape}}</label></li>
+              </ul>
+              <ul class="shape950">
+                <li *ngFor="let shape of shapes.slice(6,8)"><label><input type="checkbox"
+                      (click)="shapeFilterFunction(shape)">{{shape.shape}}</label></li>
+              </ul>
+
+              <ul class="shapeLess768">
+                <li *ngFor="let shape of shapes.slice(0,3)"><label><input type="checkbox"
+                      (click)="shapeFilterFunction(shape)">{{shape.shape}}</label></li>
+              </ul>
+              <ul class="shapeLess768">
+                <li *ngFor="let shape of shapes.slice(3,6)"><label><input type="checkbox"
+                      (click)="shapeFilterFunction(shape)">{{shape.shape}}</label></li>
+              </ul>
+              <ul class="shapeLess768">
+                <li *ngFor="let shape of shapes.slice(6,8)"><label><input type="checkbox"
+                      (click)="shapeFilterFunction(shape)">{{shape.shape}}</label></li>
+              </ul>
+              <ul class="shapeLess480">
+                <li *ngFor="let shape of shapes.slice(0,4)"><label><input type="checkbox"
+                      (click)="shapeFilterFunction(shape)">{{shape.shape}}</label></li>
+              </ul>
+              <ul class="shapeLess480">
+                <li *ngFor="let shape of shapes.slice(4,8)"><label><input type="checkbox"
+                      (click)="shapeFilterFunction(shape)">{{shape.shape}}</label></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+        <div class="filterBottom">
+          <div class="custom-slider">
+            <ng5-slider [(value)]="minValue" (userChangeEnd)="priceFilterFunction()" [(highValue)]="maxValue"
+              [options]="options"></ng5-slider>
+          </div>
+          <ul>
+            <li *ngFor="let gender of genders"><label><input type="checkbox"
+                  (click)="genderFilterFunction(gender)">{{gender.gender | uppercase}}</label></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="mainList">
+      <div class="listAndPagination">
+        <div class="sunglassList">
+          <div class="sunglassCard" *ngFor="let product of products; let i=index" productHover>
+            <div class="sunglassCardTop">
+              <i class="fas fa-plus" (click)="addToBag(product)"></i>
+              <i *ngIf="!product.favoriteStatus" class="far fa-heart" (click)="addToFavorites(product)"></i>
+              <i *ngIf="product.favoriteStatus" class="fas fa-heart"></i>
+            </div>
+            <div class="sunglassCardImg">
+              <a [routerLink]="[ '/product', product.id ]"><img src={{product.imageList}}></a>
+            </div>
+            <div class="sunglassCardBottom" (click)="redirectProduct(product)">
+              <p class="sunglassCardName">{{product.brand}} <span>{{product.model}}</span></p>
+              <div class="salePrice">
+                <p [ngClass]="product.sale ? 'saleON' : 'saleOFF'">{{product.price | currency}}</p>
+                <p class="saleCardPrice" *ngIf="product.sale">
+                  {{product.price-product.price/100*product.saleRate | currency}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

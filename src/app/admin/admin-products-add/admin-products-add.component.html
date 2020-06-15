@@ -1,0 +1,51 @@
+<section>
+  <div class="adminProductsAdd">
+    <form>
+      <div class="form-group">
+        <select [(ngModel)]="categoryName" name="categoryName" (change)="setCategory()" class="custom-select">
+          <option selected>Choose category</option>
+          <option *ngFor="let category of categories; let i=index">{{category.name | titlecase}}</option>
+        </select>
+        <select [(ngModel)]="brand" name="brand" class="custom-select">
+          <option selected>Choose brand</option>
+          <option *ngFor="let brand of brands; let i=index">{{brand}}</option>
+        </select>
+        <input [(ngModel)]="model" name="model" type="text" class="form-control" placeholder="Model name">
+        <input [(ngModel)]="price" name="price" type="number" class="form-control" placeholder="Price">
+        <select [(ngModel)]="shape" name="shape" class="custom-select">
+          <option selected>Choose shape</option>
+          <option *ngFor="let shape of shapes; let i=index">{{shape}}</option>
+        </select>
+        <select [(ngModel)]="color" name="color" class="custom-select">
+          <option selected>Choose color</option>
+          <option *ngFor="let color of colors; let i=index">{{color}}</option>
+        </select>
+        <select [(ngModel)]="material" name="material" class="custom-select">
+          <option selected>Choose material</option>
+          <option *ngFor="let material of materials; let i=index">{{material}}</option>
+        </select>
+        <select [(ngModel)]="lens" name="lens" class="custom-select">
+          <option selected>Choose lens</option>
+          <option *ngFor="let lens of lenses; let i=index">{{lens}}</option>
+        </select>
+        <div class="custom-file">
+          <input (change)="uploadFile($event)" type="file" class="custom-file-input" id="customFile">
+          <label class="custom-file-label" for="customFile">Choose image list</label>
+        </div>
+        <div class="custom-file">
+          <input (change)="uploadFile($event)" type="file" class="custom-file-input" id="customFile">
+          <label class="custom-file-label" for="customFile">Choose image number 1</label>
+        </div>
+        <div class="custom-file">
+          <input (change)="uploadFile($event)" type="file" class="custom-file-input" id="customFile">
+          <label class="custom-file-label" for="customFile">Choose image number 2</label>
+        </div>
+        <div class="custom-file">
+          <input (change)="uploadFile($event)" type="file" class="custom-file-input" id="customFile">
+          <label class="custom-file-label" for="customFile">Choose image number 3</label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-warning" (click)="addProduct()">Add product</button>
+    </form>
+  </div>
+</section>

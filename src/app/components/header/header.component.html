@@ -1,0 +1,61 @@
+<header>
+  <nav class="headerNav">
+    <ul class="navLinks">
+      <li><a class="hoverLine" [routerLink]="[ '/men' ]" routerLinkActive="active">MEN</a></li>
+      <li><a class="hoverLine" [routerLink]="[ '/women' ]" routerLinkActive="active">WOMEN</a></li>
+      <li><a class="hoverLine" [routerLink]="[ '/brands' ]" routerLinkActive="active">BRANDS</a></li>
+      <li><a class="hoverLine" [routerLink]="[ '/sale' ]" routerLinkActive="active">SALE</a></li>
+    </ul>
+    <div class="navLogo">
+      <a [routerLink]="[ '/home' ]">
+        <h4><span>SUNNY</span> GLASSER</h4>
+      </a>
+    </div>
+    <ul class="navLinks">
+      <li class="dropdown"><a>HELP</a>
+        <div class="subMenuHelp">
+          <ul>
+            <li><a [routerLink]="[ '/delivery-shipping' ]">Delivery & Shipping</a></li>
+            <li><a [routerLink]="[ '/returns' ]">Returns</a></li>
+            <li><a [routerLink]="[ '/frequently-asked-questions' ]">FAQs</a></li>
+            <li><a [routerLink]="[ '/contact-us' ]">Contact Us</a></li>
+          </ul>
+        </div>
+      </li>
+      <li><a (click)="loginStatus()"><i class="far fa-user"></i></a></li>
+      <li><a (click)="loginStatus2()"><i class="far fa-heart"></i></a></li>
+      <li class="countLi"><a [routerLink]="[ '/cart' ]"><i class="fas fa-shopping-bag"></i></a>
+        <i class="far fa-circle countCircle" *ngIf="!storage"></i>
+        <i class="countNumber" *ngIf="!storage">{{getProduct.length}}</i>
+      </li>
+    </ul>
+  </nav>
+  <nav class="headerNavLess768">
+    <div class="navLogoLess768">
+      <a [routerLink]="[ '/home' ]">
+        <h4><span>SUNNY</span> GLASSER</h4>
+      </a>
+    </div>
+    <ul class="navLinksLess768" [ngClass]="burger ? 'nav-active' : 'nothing'">
+      <li><a [routerLink]="[ '/men' ]" routerLinkActive="active">MEN</a></li>
+      <li><a [routerLink]="[ '/women' ]" routerLinkActive="active">WOMEN</a></li>
+      <li><a [routerLink]="[ '/brands' ]" routerLinkActive="active">BRANDS</a></li>
+      <li><a [routerLink]="[ '/sale' ]" routerLinkActive="active">SALE</a></li>
+      <li class="iconLi"><a [routerLink]="[ '/cart' ]" routerLinkActive="active">SHOPPING BAG</a>
+        <i class="far fa-circle" id="countCircle" *ngIf="!storage"></i>
+        <i id="countNumber" *ngIf="!storage">{{getProduct.length}}</i>
+      </li>
+      <li><a [routerLink]="[ '/favorites' ]" routerLinkActive="active">FAVORITES</a></li>
+      <li class="hover">
+        <a *ngIf="!userLoginStatus" (click)="loginStatus()">LOGIN</a>
+        <a *ngIf="userLoginStatus"(click)="loginStatus()">ACCOUNT</a>
+      </li>
+      <li><a [routerLink]="[ '/delivery-shipping' ]" routerLinkActive="active">DELIVERY</a></li>
+      <li><a [routerLink]="[ '/returns' ]" routerLinkActive="active">RETURNS</a></li>
+      <li><a [routerLink]="[ '/frequently-asked-questions' ]" routerLinkActive="active">FAQs</a></li>
+      <li><a [routerLink]="[ '/contact-us' ]" routerLinkActive="active">CONTACT US</a></li>
+    </ul>
+    <i *ngIf="!burgerStatus" class="fas fa-bars" (click)="navSlide()"></i>
+    <i *ngIf="burgerStatus" class="fas fa-times" (click)="navSlide()"></i>
+  </nav>
+</header>

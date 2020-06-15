@@ -1,0 +1,421 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  font-family: 'Roboto', sans-serif;
+}
+
+.headerNav {
+  width: 100%;
+  height: 12vh;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  border-bottom: 1px solid #fff;
+}
+
+.headerNavLess768 {
+  display: none;
+}
+
+.headerNav.scrolled {
+  background-color: #fff;
+  box-shadow: 0 2px 4px -1px black;
+}
+
+.headerNav.scrolled .navLogo a h4,
+.navLinks,
+.navLinks a {
+  color: #000;
+}
+
+.headerNav.scrolled .navLinks,
+.navLinks a {
+  color: #000;
+}
+
+.headerNav.scrolled .navLinks a {
+  color: #000;
+}
+
+.headerNav.scrolled .countCircle {
+  color: #000;
+}
+
+.headerNav.scrolled .countNumber {
+  color: #000;
+}
+
+.navLinks {
+  display: flex;
+  height: 12vh;
+  width: 30%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navLinks li {
+  list-style: none;
+  display: flex;
+}
+
+.navLinks li a {
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 3px;
+  list-style: none;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.hoverLine:hover {
+  border-bottom: 1px solid #000;
+}
+
+.navLogo {
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 5px;
+}
+
+.navLogo h4 {
+  font-weight: 800;
+  font-size: 35px;
+  color: #fff;
+}
+
+.navLogo a {
+  text-decoration: none;
+}
+
+.headerNav:hover {
+  background-color: #fff;
+  border-bottom: 1px solid #000;
+}
+
+.headerNav:hover .active {
+  border-bottom: 1px solid #000;
+}
+
+.headerNav:hover .navLogo a h4,
+.navLinks,
+.navLinks a {
+  color: #000;
+}
+
+.headerNav:hover .navLinks,
+.navLinks a {
+  color: #000;
+}
+
+.headerNav:hover .navLinks a {
+  color: #000;
+}
+
+.headerNav:hover .countCircle {
+  color: #000;
+}
+
+.headerNav:hover .countNumber {
+  color: #000;
+}
+
+.subMenuHelp {
+  display: none;
+  background-color: #fff;
+  padding: 30px 20px 10px;
+  margin-top: 25px;
+  margin-left: -40px;
+}
+
+.dropdown:hover .subMenuHelp {
+  display: block;
+  position: absolute;
+}
+
+.dropdown:hover .subMenuHelp ul {
+  display: block;
+  margin: 10px;
+}
+
+.dropdown:hover .subMenuHelp ul li {
+  width: 250px;
+  padding: 10px;
+  text-align: left;
+}
+
+.subMenuHelp ul li:hover {
+  border-bottom: 1px solid #000;
+}
+
+.countCircle {
+  font-size: 15px;
+  margin-top: -5px;
+  color: #fff;
+}
+
+.countLi {
+  position: relative;
+}
+
+.countNumber {
+  position: absolute;
+  color: #fff;
+  font-size: 11px;
+  left: 22px;
+  top: -5px;
+}
+
+.active {
+  border-bottom: 1px solid #fff;
+}
+
+.fa-user:hover {
+  cursor: pointer;
+}
+
+.fa-heart:hover {
+  cursor: pointer;
+}
+
+.hover:hover {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1200px) {
+  .navLinks li a {
+    letter-spacing: 2px;
+    font-size: 16px;
+  }
+
+  .navLogo h4 {
+    font-size: 31px;
+  }
+
+  .countNumber {
+    left: 20px;
+  }
+
+  .dropdown:hover .subMenuHelp ul li {
+    width: 200px;
+  }
+
+}
+
+@media only screen and (max-width: 1024px) {
+
+  .headerNav {
+    padding-left: 6.65%;
+    padding-right: 6.65%;
+    justify-content: start;
+  }
+
+  .navLogo {
+    width: 18%;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: center;
+  }
+
+  .navLogo a h4 {
+    font-size: 20px;
+    letter-spacing: 6px;
+  }
+
+  .navLogo a h4 span {
+    letter-spacing: 8px;
+    margin-left: 4px;
+  }
+
+  .navLinks {
+    width: 36%;
+  }
+
+  .dropdown:hover .subMenuHelp ul li {
+    width: 180px;
+  }
+
+  .navLinks li a {
+    letter-spacing: 1px;
+    font-size: 14px;
+  }
+
+  .navLogo h4 {
+    font-size: 26px;
+  }
+
+  .navLogo {
+    letter-spacing: 2px;
+  }
+
+  .countCircle {
+    font-size: 12px;
+  }
+
+  .countNumber {
+    left: 16px;
+    font-size: 9px;
+  }
+
+  .subMenuHelp {
+    margin-left: -30px;
+    padding-left: 10px;
+    padding-right: 0px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .headerNav {
+    display: none;
+  }
+
+  .headerNavLess768 {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 12vh;
+    background-color: #fff;
+    position: fixed;
+    z-index: 1020;
+    border-bottom: 1px solid #000;
+  }
+
+  .headerNavLess768 i {
+    color: #000;
+  }
+
+  .iconLi {
+    position: relative;
+  }
+
+  #countCircle {
+    top: 14%;
+    right: -13%;
+    position: absolute;
+    font-size: 19px;
+  }
+
+  #countNumber {
+    top: 15%;
+    right: -9%;
+    position: absolute;
+    font-size: 12px;
+  }
+
+  .logOrAcc:hover {
+    cursor: pointer;
+  }
+
+  .navLogoLess768 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .navLogoLess768 a {
+    text-decoration: none;
+  }
+
+  .navLogoLess768 a h4 {
+    line-height: 12vh;
+    color: #000;
+    font-size: 32px;
+    font-weight: 600;
+    letter-spacing: 4px;
+  }
+
+  .navLinksLess768 {
+    position: absolute;
+    right: 0px;
+    height: 88vh;
+    top: 12vh;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    padding: 5%;
+    opacity: 0.97;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+
+  .navLinksLess768 li {
+    list-style: none;
+    display: flex;
+  }
+
+  .navLinksLess768 li a {
+    text-decoration: none;
+    color: #000;
+    letter-spacing: 5px;
+    list-style: none;
+    font-size: 20px;
+    font-weight: 800;
+    padding-bottom: 2px;
+  }
+
+  .headerNavLess768 i {
+    position: absolute;
+    top: 36%;
+    right: 4%;
+    font-size: 26px;
+  }
+
+  .headerNavLess768 i:hover {
+    cursor: pointer;
+  }
+
+  .nav-active {
+    transform: translateX(0%);
+  }
+
+  .active {
+    border-bottom: 1.5px solid #000;
+  }
+
+  #glassIcon {
+    position: absolute;
+    font-size: 15px;
+    color: #000;
+    top: 23%;
+    right: 2%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .navLogoLess768 {
+    justify-content: start;
+    margin-left: 4%;
+  }
+
+  .navLogoLess768 a h4 {
+    font-size: 30px;
+  }
+
+  .headerNavLess768 i {
+    font-size: 25px;
+  }
+
+}
+
+@media only screen and (max-width: 320px) {
+  .navLogoLess768 a h4 {
+    font-size: 26px;
+  }
+
+  .headerNavLess768 i {
+    top: 31%;
+  }
+
+}

@@ -1,0 +1,117 @@
+<div class="headerImage"></div>
+<div class="cartEmpty" *ngIf="!orders.length">
+  <div class="mainEmpty">
+    <h2>YOUR SHOPPING BAG IS EMPTY</h2>
+    <p>Your shopping bag is currently empty. If you see something you would like to add to your shopping bag when
+      shopping, click <strong>add to bag</strong>.</p>
+    <a [routerLink]="[ '/brands' ]">CONTINUE SHOPPING</a>
+  </div>
+</div>
+<div class="cartMain" *ngIf="orders.length">
+  <h2>Your cart</h2>
+  <form>
+    <table class="table">
+      <thead>
+        <tr>
+          <th style="width: 25%;">Product</th>
+          <th style="width: 25%;"></th>
+          <th style="width: 15%;">Price</th>
+          <th style="width: 15%;">Quantity</th>
+          <th style="width: 15%;">Total</th>
+          <th style="width: 5%;"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders">
+          <td>
+            <div class="productCartImg">
+              <a [routerLink]="[ '/product', order.id ]"><img src="{{order.imageList}}"></a>
+            </div>
+          </td>
+          <td>
+            <div class="productCartDescription">
+              <p>{{order.brand}} <span>{{order.model}}</span></p>
+              <p>Color: {{order.color}}</p>
+              <p>Frame: {{order.material}}</p>
+            </div>
+          </td>
+          <td>
+            <div class="priceCart">
+              <div *ngIf="!order.sale">
+                <p>{{order.price | currency}}</p>
+              </div>
+              <div *ngIf="order.sale">
+                <p class="oldPrice">{{order.price | currency}}</p>
+                <p>{{order.price-order.price/100*order.saleRate | currency}}</p>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="quantityCart">
+              <i class="fas fa-chevron-left" (click)="productCount(order,false)"></i>
+              <p [textContent]="order.count"></p>
+              <i class="fas fa-chevron-right" (click)="productCount(order,true)"></i>
+            </div>
+          </td>
+          <td>
+            <div class="totalCart">
+              <div *ngIf="!order.sale">
+                <p *ngIf="!order.sale">{{order.count * order.price | currency}}</p>
+              </div>
+              <div *ngIf="order.sale">
+                <p class="oldPrice">{{order.count * order.price | currency}}</p>
+                <p>{{order.count * (order.price-order.price/100*order.saleRate) | currency}}</p>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="cancelCart">
+              <i class="fas fa-times" (click)="deleteProduct(order)"></i>
+            </div>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+    <div class="cartLess768" *ngFor="let order of orders">
+      <div class="orderLess768">
+        <div class="productCartImg">
+          <a [routerLink]="[ '/product', order.id ]"><img src="{{order.imageList}}"></a>
+          <i class="fas fa-times" (click)="deleteProduct(order)"></i>
+        </div>
+        <div class="orderDesc">
+          <div class="productCartDescription">
+            <p>{{order.brand}} <span>{{order.model}}</span></p>
+          </div>
+          <div class="priceCart">
+            <div *ngIf="!order.sale">
+              <p>{{order.price | currency}}</p>
+            </div>
+            <div *ngIf="order.sale" class="marginP">
+              <p class="oldPrice">{{order.price | currency}}</p>
+              <p>{{order.price-order.price/100*order.saleRate | currency}}</p>
+            </div>
+          </div>
+          <div class="quantityCart">
+            <i class="fas fa-chevron-left" (click)="productCount(order,false)"></i>
+            <p [textContent]="order.count"></p>
+            <i class="fas fa-chevron-right" (click)="productCount(order,true)"></i>
+          </div>
+          <div class="totalCart">
+            <div *ngIf="!order.sale">
+              <p *ngIf="!order.sale">{{order.count * order.price | currency}}</p>
+            </div>
+            <div *ngIf="order.sale" class="marginP">
+              <p class="oldPrice">{{order.count * order.price | currency}}</p>
+              <p>{{order.count * (order.price-order.price/100*order.saleRate) | currency}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cartFooter">
+      <p class="totalPrice">Total price: {{totalPrice | currency}}</p>
+      <a class="checkoutButton" [routerLink]="[ '/checkout' ]">CHECKOUT NOW</a>
+    </div>
+  </form>
+</div>

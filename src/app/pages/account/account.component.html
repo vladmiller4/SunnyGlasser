@@ -1,0 +1,83 @@
+<div class="headerImage"></div>
+<div class="accountMain">
+  <div class="welcomeBanner">
+    <p>WELCOME BACK, {{user.firstname | uppercase}}</p>
+    <a class="signOut" [routerLink]="[ '/login']" (click)="signOut()">SIGN OUT</a>
+    <i class="fas fa-sign-out-alt" (click)="signOut()"></i>
+  </div>
+  <div class="account">
+    <div class="upperAccount">
+      <div class="accountInfo">
+        <div class="upperInfo">
+          <h3>Account info</h3>
+        </div>
+        <div class="mainInfo">
+          <p>First Name: <span>{{user.firstname}}</span></p>
+          <p>Last Name: <span>{{user.lastname}}</span></p>
+          <p>Email address: <span>{{user.email}}</span></p>
+          <p>Password: <span>{{user.password}}</span></p>
+        </div>
+      </div>
+      <div class="addressBook">
+        <div class="upperInfo">
+          <h3>Address book</h3>
+          <a (click)="openModal(editModal)">Edit</a>
+        </div>
+        <div class="mainInfo">
+          <p>City: <span>{{user.city}}</span></p>
+          <p>Address line: <span>{{user.addresLine}}</span></p>
+          <p>Zip code: <span>{{user.zipCode}}</span></p>
+          <p>Phone number: <span>{{user.phone}}</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="userOrders" *ngIf="ordersStatus">
+    <div class="upperOrder">
+      <p>Orders</p>
+    </div>
+    <div class="mainUserOrder" *ngFor="let order of arrUserOrders">
+      <div class="upperUserOrder">
+        <p>{{order.userDate | date: 'dd.MM.yyyy. HH:mm'}}</p>
+        <i class="fas fa-times" (click)="deleteOrder(order)"></i>
+      </div>
+      <div class="productMain" *ngFor="let item of order.orderDetails">
+        <div class="productImages">
+          <img src="{{item.image1}}">
+        </div>
+        <div class="productInfo">
+          <div class="productTitle">
+            <h5>{{item?.brand}} <span>{{item?.model}}</span></h5>
+          </div>
+          <div class="salePrice jcStart">
+            <p class="saleCardPrice" *ngIf="item?.sale" style="margin-left: 0px">
+              {{item?.price-item?.price/100*item?.saleRate | currency}}</p>
+            <p [ngClass]="item?.sale ? 'saleON' : 'saleOFF'">{{item?.price | currency}}</p>
+          </div>
+          <p>{{order.userFirstName}} <span>{{order.userLastName}}</span></p>
+          <p>{{order.userCity}}, <span>{{order.userAddresLine}}</span>, <span>{{order.userZipCode}}</span></p>
+          <p>Tel: {{order.userPhone}}</p>
+          <p>Email: {{order.userEmail}}</p>
+        </div>
+      </div>
+      <div class="lowerUserOrder">
+        <p>Total price: {{order.totalPayment | currency}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #editModal>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Address book</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <input type="text" name="city" [(ngModel)]="city" placeholder="City">
+    <input type="text" name="addresLine" [(ngModel)]="addresLine" placeholder="Address line">
+    <input type="text" name="zipCode" [(ngModel)]="zipCode" placeholder="Zip code">
+    <input type="tel" name="phone" [(ngModel)]="phone" placeholder="(099) 123-4567" [textMask]="{mask: phoneMask}">
+    <button (click)="saveBook()">Save</button>
+  </div>
+</ng-template>

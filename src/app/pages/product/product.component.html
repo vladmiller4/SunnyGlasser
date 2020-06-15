@@ -1,0 +1,89 @@
+<div class="headerImage"></div>
+<div class="breadcrumbTrails">
+  <i class="fas fa-chevron-left" (click)="goBack()"></i>
+  <p (click)="goBack()">{{product?.brand}} / {{product?.model}}</p>
+</div>
+<div class="productMain">
+  <div class="productImages">
+    <i *ngIf="!product?.favoriteStatus" class="far fa-heart heartLess768" (click)="addToFavorites(product)"></i>
+    <i *ngIf="product?.favoriteStatus" class="fas fa-heart heartLess768"></i>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{{product?.image1}}" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+          <img src="{{product?.image2}}" class="d-block w-100">
+        </div>
+        <div class="carousel-item">
+          <img src="{{product?.image3}}" class="d-block w-100">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="productInfo">
+    <div class="productTitle">
+      <h5>{{product?.brand}}</h5><i class="far fa-heart" (click)="addToFavorites(product)"></i>
+      <p class="saleCardPrice saleCardPriceLess768" *ngIf="product?.sale" style="margin-left: 0px" id="cardPrice768">
+        {{product?.price-product?.price/100*product?.saleRate | currency}}<span id="cardPrice768" [ngClass]="product?.sale ? 'saleON' : 'saleOFF'">{{product?.price | currency}}</span></p>
+    </div>
+    <div class="salePrice jcStart">
+      <p class="saleCardPrice" *ngIf="product?.sale" style="margin-left: 0px">
+        {{product?.price-product?.price/100*product?.saleRate | currency}}</p>
+      <p [ngClass]="product?.sale ? 'saleON' : 'saleOFF'">{{product?.price | currency}}</p>
+    </div>
+    <h6>DETAILS:</h6>
+    <p>Model: <span>{{product?.model}}</span></p>
+    <p>Shape: <span>{{product?.shape}}</span></p>
+    <p>Color: <span>{{product?.color}}</span></p>
+    <p>Frame material: <span>{{product?.material}}</span></p>
+    <p>Lens material: <span>{{product?.lens}}</span></p>
+    <button (click)="addToBag(product)" class="buttonDefault">ADD TO SHOPING BAG</button>
+    <button (click)="addToBag(product)" class="button768">ADD TO SHOPING BAG</button>
+  </div>
+</div>
+<div class="aboutProductBrand">
+  <h4>{{product?.brand}}</h4>
+  <p>{{product?.brand}} eschews flashy logos and gimmicky features, in favor of sleek minimalism and carefully chosen
+    details. His
+    unerring eye for design gives his sunglasses a look that is clearly of the moment, yet at home in any era.
+    {{product?.brand}}'s collection conveys luxury, glamour and exclusivity, and to guarantee luxury through attention
+    to detail and
+    quality of product.</p>
+  <button class="shopButtonDefault"><a [routerLink]="[ '/brands' ]">Shop all {{product?.brand}}</a></button>
+  <button class="shopButton768"><a [routerLink]="[ '/brands' ]">SHOP</a></button>
+</div>
+<div class="alsoLike">
+  <h5>YOU MAY ALSO LIKE</h5>
+  <div class="alsoLikeSunglass">
+    <div class="alsoLikeCard" *ngFor="let product of alsoLike.slice(0,4)">
+      <div class="alsoLikeImg"><a [routerLink]="[ '/product', product.id ]"><img src="{{product.imageList}}"
+            productHover></a></div>
+      <div class="alsoLikeDescription">
+        <p>{{product?.brand}} <span>{{product?.model}}</span></p>
+        <div class="salePrice">
+          <p [ngClass]="product.sale ? 'saleON' : 'saleOFF'">{{product?.price | currency}}</p>
+          <p class="saleCardPrice" *ngIf="product.sale">
+            {{product?.price-product?.price/100*product?.saleRate | currency}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="alsoLikeCardLess1024" *ngFor="let product of alsoLike.slice(0,3)">
+      <div class="alsoLikeImg"><a [routerLink]="[ '/product', product.id ]"><img src="{{product.imageList}}"
+            productHover></a></div>
+      <div class="alsoLikeDescription">
+        <p>{{product?.brand}} <span>{{product?.model}}</span></p>
+        <div class="salePrice">
+          <p [ngClass]="product.sale ? 'saleON' : 'saleOFF'">{{product?.price | currency}}</p>
+          <p class="saleCardPrice" *ngIf="product.sale">
+            {{product?.price-product?.price/100*product?.saleRate | currency}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

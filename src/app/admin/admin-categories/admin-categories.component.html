@@ -1,0 +1,32 @@
+<div class="adminCategories">
+  <form>
+    <div class="form-group">
+      <input pattern="[A-Za-z]{2,}" required [(ngModel)]="category.name" name="name" #name="ngModel" type="text"
+        class="form-control categoryName" placeholder="Name category">
+    </div>
+    <button [disabled]="name.invalid" class="btn btn-success mb-4 mt-1" (click)="addCategory()" *ngIf="!editStatus">Add
+      Category</button>
+    <button [disabled]="name.invalid" class="btn btn-success mb-4 mt-1" (click)="addCategory()" *ngIf="editStatus">Save
+      Category</button>
+  </form>
+  <table class="table table-bordered table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Category</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let category of categories; let i=index">
+        <td>{{i+1}}</td>
+        <td>{{category.name}}</td>
+        <td><button class="btn btn-warning" (click)="editCategory(category)" style="width: 50%;">Edit</button>
+        </td>
+        <td><button class="btn btn-danger" (click)="deleteCategory(category)" [disabled]="editStatus"
+            style="width: 50%;">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

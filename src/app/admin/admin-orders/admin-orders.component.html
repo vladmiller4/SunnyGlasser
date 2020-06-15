@@ -1,0 +1,32 @@
+<div class="adminOrders">
+  <table class="table table-bordered table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Products</th>
+        <th scope="col">Total</th>
+        <th scope="col">Name</th>
+        <!-- <th scope="col">Address</th> -->
+        <th scope="col">City</th>
+        <!-- <th scope="col">Zip</th> -->
+        <th scope="col">Phone</th>
+        <th scope="col">Email</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders; let i=index">
+        <td>{{order.id}}</td>
+        <td><p *ngFor="let item of order.orderDetails">{{item.model}}</p></td>
+        <td>{{order.totalPayment | currency}}</td>
+        <td>{{order.userFirstName}} {{order.userLastName}}</td>
+        <!-- <td>{{order.userAddresLine}}</td> -->
+        <td>{{order.userCity}}</td>
+        <!-- <td>{{order.userZipCode}}</td> -->
+        <td>{{order.userPhone}}</td>
+        <td>{{order.userEmail}}</td>
+        <td><button class="btn btn-danger" (click)="deleteOrder(order)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

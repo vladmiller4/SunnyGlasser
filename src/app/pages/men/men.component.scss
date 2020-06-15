@@ -1,0 +1,681 @@
+.headerImage {
+  width: 100%;
+  height: 12vh;
+  background-color: #000;
+  font-family: 'Roboto', sans-serif;
+}
+
+.men {
+  min-height: 78vh;
+}
+
+.titleOfComponents {
+  width: 100%;
+  height: 12vh;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  padding-left: 3%;
+  padding-right: 7.5%;
+  border-bottom: 1px solid #000;
+  font-family: 'Roboto', sans-serif;
+}
+
+.titleOfComponents h3 {
+  letter-spacing: 1.5px;
+}
+
+.titleOfComponents2 {
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+#navArrow {
+  line-height: 12vh;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+#navArrow:hover {
+  cursor: pointer;
+}
+
+.titleOfComponents2 p {
+  letter-spacing: 3px;
+  font-size: 22px;
+  margin-bottom: 0px;
+}
+
+.titleOfComponents2:hover {
+  cursor: pointer;
+}
+
+.mainList {
+  width: 100%;
+  display: flex;
+}
+
+.filterMenu {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #000;
+  display: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+.filterBy {
+  width: 100%;
+  height: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.filterNav {
+  padding-left: 3%;
+  padding-right: 7.5%;
+  margin-bottom: 0px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.filterNav>li {
+  list-style: none;
+  text-align: left;
+  padding: 20px;
+  border: 1px solid grey;
+  font-size: 20px;
+  width: 28%;
+  position: relative;
+}
+
+#liBrands {
+  width: 67%;
+}
+
+.dropDownFilter {
+  font-size: 16px;
+  color: grey;
+}
+
+.dropDownFilterFlex {
+  font-size: 16px;
+  color: grey;
+  display: flex;
+  width: 100%;
+}
+
+.dropDownFilterFlex ul {
+  width: 50%;
+}
+
+.dropDownFilter ul,
+.dropDownFilterFlex ul {
+  margin-top: 20px;
+  padding-left: 0px;
+  width: 100%;
+}
+
+
+.dropDownFilter ul li,
+.dropDownFilterFlex ul li {
+  margin-bottom: 10px;
+  text-align: left;
+  list-style: none;
+}
+
+.dropDownFilter ul li label:hover {
+  cursor: pointer;
+}
+
+.dropDownFilterFlex ul li label:hover {
+  cursor: pointer;
+}
+
+.dropDownFilter ul li label input {
+  margin-right: 10px;
+}
+
+.dropDownFilterFlex ul li label input {
+  margin-right: 10px;
+}
+
+.custom-slider {
+  width: 60%;
+  margin-left: 3%;
+  padding-top: 40px;
+  padding-bottom: 10px;
+}
+
+::ng-deep {
+  .custom-slider .ng5-slider .ng5-slider-selection {
+    background: #6f6f6f;
+  }
+
+  .custom-slider .ng5-slider .ng5-slider-pointer {
+    width: 10px;
+    height: 20px;
+    top: auto;
+    bottom: 0;
+    background-color: #000;
+    outline: none;
+    border-radius: 0px;
+  }
+
+  .custom-slider .ng5-slider .ng5-slider-pointer:after {
+    display: none;
+  }
+
+  .ng5-slider-bubble {
+    margin-bottom: 15px;
+  }
+}
+
+.listAndPagination {
+  margin-top: -20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sunglassList {
+  width: 90%;
+  margin-left: 5%;
+  margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+}
+
+.sunglassCard {
+  width: 30%;
+  margin-top: 60px;
+  margin-left: 1.65%;
+  margin-right: 1.65%;
+  height: 40vh;
+}
+
+.sunglassCardTop {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sunglassCardTop i {
+  margin-top: 15px;
+  margin-right: 15px;
+  font-size: 22px;
+}
+
+.sunglassCardImg {
+  width: 100%;
+  max-height: 20vh;
+}
+
+.sunglassCardImg a img {
+  max-width: 100%;
+  height: auto;
+}
+
+.sunglassCardBottom {
+  margin-top: 30px;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.sunglassCardName {
+  text-align: center;
+  font-size: 20px;
+  letter-spacing: 2px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.sunglassCardName span {
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: grey;
+}
+
+.salePrice {
+  display: flex;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.saleCardPrice {
+  margin-top: -10px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-left: 10px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.saleON {
+  text-decoration: line-through;
+  color: grey;
+  margin-top: -10px;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.saleOFF {
+  margin-top: -10px;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.fa-plus:hover {
+  cursor: pointer;
+  color: #606469;
+}
+
+.fa-heart:hover {
+  cursor: pointer;
+  color: #606469;
+}
+
+.displayNone {
+  display: none;
+}
+
+.displayBlock {
+  display: block;
+}
+
+.displayBlock {
+  display: flex;
+}
+
+.pagination {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.moreButton {
+  border: 1px solid black;
+  padding: 10px 20px;
+  background-color: #fff;
+  outline: none;
+}
+
+.productHover {
+  transform: scale(1.02);
+  transition: .5s all;
+  z-index: 100;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.allBrands {
+  position: absolute;
+  font-size: 12px;
+  text-decoration: underline;
+  right: 30px;
+  margin-top: -10px;
+}
+
+.allBrands:hover {
+  color: black;
+  cursor: pointer;
+}
+
+#liBrands768 {
+  display: none;
+}
+
+.priceLess768 {
+  display: none;
+}
+
+.shapeLess768 {
+  display: none;
+}
+
+#liBrands480 {
+  display: none;
+}
+
+.shapeLess480 {
+  display: none;
+}
+
+.priceLess480 {
+  display: none;
+}
+
+.shape950 {
+  display: none;
+}
+
+.goUp {
+  width: 22px;
+  height: 22px;
+  position: fixed;
+  bottom: 2%;
+  right: 1%;
+  display: none;
+}
+.goUp:hover {
+  cursor: pointer;
+}
+.active {
+  display: block;
+}
+
+@media only screen and (max-width: 1200px) {
+
+  .titleOfComponents,
+  .filterNav {
+    padding-right: 3%;
+  }
+
+  .custom-slider {
+    width: 63%;
+  }
+
+  .titleOfComponents {
+    height: 100px;
+  }
+
+  .sunglassCard {
+    height: 325px;
+    margin-top: 50px;
+  }
+
+}
+
+@media only screen and (max-width: 1024px) {
+
+  .custom-slider {
+    padding-bottom: 20px;
+  }
+
+  .sunglassCardName {
+    font-size: 18px;
+  }
+
+  .sunglassCardName span {
+    font-size: 16px;
+  }
+
+  .saleCardPrice,
+  .saleON {
+    font-size: 16px;
+  }
+
+  .sunglassCard {
+    height: 300px;
+    margin-top: 20px;
+  }
+
+  .titleOfComponents {
+    margin-bottom: 45px;
+    padding-left: 6.65%;
+    padding-right: 6.65%;
+  }
+
+  .dropDownFilterFlex,
+  .dropDownFilter {
+    font-size: 15px;
+  }
+
+  .filterBy {
+    padding-left: 6.65%;
+    padding-right: 6.65%;
+  }
+
+  .filterNav {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .filterNav>li {
+    margin-top: -45px;
+    width: 30%;
+  }
+
+  #liBrands {
+    width: 69%;
+  }
+
+  .dropDownFilter ul li,
+  .dropDownFilterFlex ul li {
+    margin-bottom: 2px;
+  }
+
+  .filterMenu {
+    margin-bottom: 45px;
+  }
+
+  .custom-slider {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  @media only screen and (max-width: 950px) {
+    .filterNav {
+      flex-direction: column;
+    }
+
+    #liBrands {
+      width: 100%;
+      margin-top: 0;
+    }
+
+    .filterNav>li {
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .shape950 {
+      display: block;
+    }
+
+    .shapeDefault {
+      display: none;
+    }
+
+  }
+
+  @media only screen and (max-width: 768px) {
+    #liBrands768 {
+      display: block;
+    }
+
+    #liBrands {
+      display: none;
+    }
+
+    .sunglassCard {
+      width: 44%;
+      margin-left: 3%;
+      margin-right: 3%;
+    }
+
+    .titleOfComponents h3 {
+      font-size: 24px;
+    }
+
+    .titleOfComponents {
+      padding-left: 8%;
+      padding-right: 8%;
+      margin-bottom: 25px;
+    }
+
+    .titleOfComponents2 p {
+      font-size: 20px;
+    }
+
+    .filterNav {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .dropDownFilterFlex {
+      justify-content: space-between;
+    }
+
+    .dropDownFilterFlex ul {
+      display: flex;
+      flex-direction: column;
+      width: 160px;
+    }
+
+    .dropDownFilter ul {
+      width: 160px;
+    }
+
+    #liBrands {
+      width: 100%;
+      margin-top: 0;
+    }
+
+    .filterNav>li {
+      width: 100%;
+      margin-top: 20px;
+      padding-right: 0;
+    }
+
+    .filterBy {
+      margin-bottom: 40px;
+    }
+
+    .priceDefault {
+      display: none;
+    }
+
+    .priceLess768 {
+      display: block;
+    }
+
+    .shapeDefault {
+      display: none;
+    }
+
+    .shapeLess768 {
+      display: block;
+    }
+
+    .displayBlock {
+      justify-content: space-between;
+    }
+
+    .sunglassCardName p {
+      font-size: 16px;
+    }
+
+    .sunglassCardName span {
+      font-size: 15px;
+    }
+
+    .salePrice p {
+      font-size: 14px;
+    }
+
+    .sunglassCardBottom {
+      margin-top: 10px;
+    }
+
+    .sunglassCard {
+      height: 270px;
+    }
+
+    .shape950 {
+      display: none;
+    }
+
+  }
+
+  @media only screen and (max-width: 530px) {
+
+    .dropDownFilterFlex {
+      font-size: 13px;
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    #liBrands768 {
+      display: none;
+    }
+
+    #liBrands480 {
+      display: block;
+    }
+
+    .dropDownFilterFlex,
+    .dropDownFilter {
+      font-size: 15px;
+    }
+
+    .shapeLess768 {
+      display: none;
+    }
+
+    .shapeLess480 {
+      display: block;
+    }
+
+    .priceLess768 {
+      display: none;
+    }
+
+    .priceLess480 {
+      display: block;
+    }
+
+    .sunglassCard {
+      width: 100%;
+      height: 315px;
+    }
+
+    .sunglassCard p {
+      font-size: 18px;
+    }
+
+    .sunglassCardName span {
+      font-size: 20px;
+    }
+
+    .sunglassCardBottom {
+      margin-top: 20px;
+    }
+
+    .titleOfComponents {
+      padding-left: 4%;
+      padding-right: 4%;
+    }
+
+    .titleOfComponents2 p {
+      margin-top: -3px;
+      font-size: 14px;
+    }
+
+    .titleOfComponents2 i {
+      margin-top: -4px;
+      font-size: 11px;
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    .sunglassCardBottom {
+      margin-top: -12px;
+    }
+
+    .sunglassCard {
+      height: 270px;
+    }
+  }
+
+  @media only screen and (max-width: 320px) {
+
+    .sunglassCardBottom {
+      margin-top: 15px;
+    }
+  }
+}
