@@ -1,6 +1,10 @@
-First, you need to use the console to run the command `npm install –g @angular/cli`. To start this project you need to install node_modules, run `npm i` to install. Then run `ng serve -o` for a dev server and open browser.
-
 # SunglassProject
+
+To run this project you need:
+1) use the console to run the command `npm install –g @angular/cli`;
+2) run `npm i` to install node_modules;
+3) run in another terminal `json-server --watch db.json` to start json-server;
+4) run `ng serve -o` for a dev server and open browser.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.1.
 
